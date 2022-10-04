@@ -4,6 +4,7 @@ header('Content-Type: text/html; charset=UTF-8');
 if (include_once 'modules/security.php') {
     $_SESSION['raiz'] = dirname(__FILE__);
 }
+include_once __DIR__ . '/bootstrap/index.php';
 include_once 'modules/conexion.php';
 include_once 'modules/notif_info_unset.php';
 ?>
@@ -14,13 +15,13 @@ include_once 'modules/notif_info_unset.php';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="robots" content="noindex">
-    <meta name="google" value="notranslate">
-    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="<?php echo images('icon.png'); ?>" />
     <title>Sistema Escolar</title>
     <meta name="description" content="Sistema Escolar, gestión de asistencias." />
-    <link rel="stylesheet" href="/css/style.css?v=<?php echo (rand()); ?>" media="screen, projection" type="text/css" />
-    <script src="/js/external/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/external/prefixfree.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="<?php echo css('style.css'); ?>" media="screen, projection" type="text/css" />
+    <script src="<?php echo js('external/jquery.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo js('external/prefixfree.min.js'); ?>" type="text/javascript"></script>
     <script type="text/javascript">
         $(window).load(function() {
             $(".loader").fadeOut("slow");
@@ -45,6 +46,6 @@ include_once 'modules/notif_info_unset.php';
         ?>
     </aside>
 </body>
-<script src="/js/controls/buttons.js" type="text/javascript"></script>
+<script src="<?php echo js('controls/buttons.js'); ?>" type="text/javascript"></script>
 
 </html>

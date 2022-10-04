@@ -83,7 +83,7 @@ if (!empty($_POST['txtuser']) and !empty($_POST['txtpass'])) {
                 setcookie('school_period', $school_period, time() + 15 * 24 * 60 * 60);
                 setcookie('authenticate', 'go-' . $user, time() + 15 * 24 * 60 * 60);
 
-                header('Location: home');
+                header('Location: ' . app_path('home'));
             } else {
                 $_SESSION['user'] = $user;
                 $_SESSION['name'] = $name;
@@ -93,7 +93,7 @@ if (!empty($_POST['txtuser']) and !empty($_POST['txtpass'])) {
                 $_SESSION['school_period'] = $school_period;
                 $_SESSION['authenticate'] = 'go-' . $user;
 
-                header('Location: /home');
+                header('Location: ' . app_path('home'));
             }
         } else {
             error_user:

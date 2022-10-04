@@ -3,12 +3,13 @@ session_start();
 
 header('Content-Type: text/html; charset=UTF-8');
 
+include_once __DIR__ . '/bootstrap/index.php';
 include_once 'modules/conexion.php';
 include_once 'modules/cookie.php';
 
 
 if (!empty($_SESSION['authenticate']) == 'go-' . !empty($_SESSION['usuario'])) {
-	header('Location: home');
+	header('Location: ' . app_path('home'));
 	exit();
 }
 ?>
@@ -18,15 +19,15 @@ if (!empty($_SESSION['authenticate']) == 'go-' . !empty($_SESSION['usuario'])) {
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-	<meta name="google" value="notranslate">
-	<link rel="icon" type="image/png" href="/images/icon.png" />
+	<meta name="google" content="notranslate">
+	<link rel="icon" type="image/png" href="<?php echo images('icon.png'); ?>" />
 	<title>Sistema Escolar</title>
 	<meta name="description" content="Sistema Escolar, gestión de asistencias." />
 	<meta name="keywords" content="Sistema Escolar, Asistencias, Alumnos, Docentes, Administrativos, Sistema de Asistencias, MySoftUP, Diego, Carmona, Bernal, Diego Carmona Bernal, Gestión de Asistencias" />
-	<link rel="stylesheet" href="/css/style.css?v=<?php echo(rand()); ?>" media="screen, projection" type="text/css" />
-	<link rel="stylesheet" href="css/pretty-checkbox.css" media="screen, projection" type="text/css" />
-	<script src="/js/external/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/external/prefixfree.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo css('style.css'); ?>" media="screen, projection" type="text/css" />
+	<link rel="stylesheet" href="<?php echo css('pretty-checkbox.css'); ?>" media="screen, projection" type="text/css" />
+	<script src="<?php echo js('external/jquery.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo js('external/prefixfree.min.js'); ?>" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			$(".loader").fadeOut("slow");
@@ -51,6 +52,6 @@ if (!empty($_SESSION['authenticate']) == 'go-' . !empty($_SESSION['usuario'])) {
 		</form>
 	</div>
 </body>
-<script src="/js/controls/buttons.js" type="text/javascript"></script>
+<script src="<?php echo js('controls/buttons.js'); ?>" type="text/javascript"></script>
 
 </html>
