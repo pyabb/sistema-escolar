@@ -23,7 +23,7 @@ function closeNotif() {
 
     $.ajax({
         type: 'POST',
-        url: '/modules/notif_info_close.php',
+        url: 'http://localhost/sistema-escolar/modules/notif_info_close.php',
         data: {
             close_msgbox_info: close,
             close_msgbox_error: close
