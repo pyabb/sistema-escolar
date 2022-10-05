@@ -16,6 +16,11 @@ If you need a business application with native PHP then consider using PHP compo
 * Symfony Yaml
 * ORM (Eloquent or Doctrine)
 
+New or fixed features will be implemented in a separate branch. The steps are:
+* Create a branch with a new feature for the project.
+* Testing the new feature.
+* Pull request into develop branch.
+
 You can see all changelogs [here](changelogs/en.md)
 
 
@@ -34,13 +39,30 @@ Si necesita una aplicación comercial con PHP nativo, considere usar PHP compose
 * Symfony Yaml
 * ORM (Eloquent or Doctrine)
 
+Las características nuevas o fijas se implementarán en una rama separada. Los pasos son:
+* Cree una rama con una nueva característica para el proyecto.
+* Probando la nueva característica.
+* Pull request a la rama de desarrollo.
+
 Puede ver todos los registros de cambios [aquí](changelogs/es.md)
 
-http://mysoftup.com
+## User Access
 
-user: editor
+| User   | Pass   |
+|--------|--------|
+| admin  | root   |
+| editor | editor |
 
-pass: editor
+## Owner
+
+Support this project with `like` or `subscription` [here](https://www.youtube.com/watch?v=8h14L21eJsg)
+
+| Project     | Version | Link                 |
+|-------------|---------|----------------------|
+| Original    | v1.0.0  | http://mysoftup.com  |
+| New version | vx.0.0  |                      |
+
+
 
 ![image](https://user-images.githubusercontent.com/43613125/160877647-2228e861-b991-419a-85cd-326550f49c50.png)
 
