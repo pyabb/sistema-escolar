@@ -1,10 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-
+include_once __DIR__ . '/bootstrap/index.php';
 if (include_once 'modules/security.php') {
     $_SESSION['raiz'] = dirname(__FILE__);
 }
-include_once __DIR__ . '/bootstrap/index.php';
 include_once 'modules/conexion.php';
 include_once 'modules/notif_info_unset.php';
 ?>
