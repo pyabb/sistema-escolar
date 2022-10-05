@@ -62,6 +62,29 @@ Support this project with `like` or `subscription` [here](https://www.youtube.co
 | Original    | v1.0.0  | http://mysoftup.com  |
 | New version | vx.0.0  |                      |
 
+## Installation for XAMPP
+1. Download .zip file or clone this repository. If you download zip file then rename the directory, for this example the directory name will be `sistema-escolar`.
+2. Migrate database from `sistema-cursos/db/db_school.sql` in your personal database like phpmyadmin.
+3. Edit `.env` file with your credentials.
+
+| Variable       | Example Value                    | Description                    |
+|----------------|----------------------------------|--------------------------------|
+| APP_PATH       | http://localhost/sistema-escolar | Your domain path               |
+| DIRECTORY_PATH |                                  | Not necessary                  |
+| DB_HOST        | localhost                        | Database server                |
+| DB_NAME        | db_school                        | Database name                  |
+| DB_USER        | root                             | Database user                  |
+| DB_PASS        |                                  | Database pass (empty password) |
+| TIME_ZONE      | America/Mexico_City              | Set your locale time zone      |
+    
+If you need deployment this project in shared hosting then replace APP_PATH value with your domain `https://mydomain.com` and copy all content from `sistema-escolar` directory in your root path of your hosting.
+
+If you need deployment this project in custom xampp directory then change the APP_PATH value with localhost and the directory file that contain this project.
+
+4. Copy `sistema-escolar` directory into htdocs and the result will be: `htdocs/sistema-escolar/<project-content>`
+5. Additionally, edit `sistema-escolar/js/controls/unsetnotif.js` file. Search line 26 and replace `http://localhost/sistema-escolar` for your domain or your localhost directory. 
+6. In browser search `http://localhost/sistema-escolar`
+7. Don't forget set permission for `users` and `old` directories from `sistema-escolar/images/<...>` to upload files.
 
 
 ![image](https://user-images.githubusercontent.com/43613125/160877647-2228e861-b991-419a-85cd-326550f49c50.png)
