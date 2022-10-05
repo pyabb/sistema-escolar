@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -39,18 +40,18 @@ include_once 'load_data.php';
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 	<meta name="robots" content="noindex">
-	<meta name="google" value="notranslate">
-	<link rel="icon" type="image/png" href="/images/icon.png" />
+	<meta name="google" content="notranslate">
+	<link rel="icon" type="image/png" href="<?php echo images('icon.png'); ?>" />
 	<title>Periodo Escolar | Sistema de Control Escolar</title>
 	<meta name="description" content="Sistema Escolar, gestión de asistencias." />
-	<link rel="stylesheet" href="/css/style.css?v=<?php echo (rand()); ?>" media="screen, projection" type="text/css" />
-	<link rel="stylesheet" href="/css/select2.css" media="screen, projection" type="text/css" />
-	<link rel="stylesheet" href="/css/litepicker.css" media="screen, projection" type="text/css" />
-	<script src="/js/external/jquery.min.js" type="text/javascript"></script>
-	<script src="/js/external/litepicker.js" type="text/javascript"></script>
-	<script src="/js/external/prefixfree.min.js" type="text/javascript"></script>
-	<script src="/js/controls/unsetnotif.js"  type="text/javascript"></script>
-	<script src="/js/external/select2.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo css('style.css'); ?>" media="screen, projection" type="text/css" />
+	<link rel="stylesheet" href="<?php echo css('select2.css'); ?>" media="screen, projection" type="text/css" />
+	<link rel="stylesheet" href="<?php echo css('litepicker.css'); ?>" media="screen, projection" type="text/css" />
+	<script src="<?php echo js('external/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo js('external/litepicker.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo js('external/prefixfree.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo js('controls/unsetnotif.js'); ?>"  type="text/javascript"></script>
+	<script src="<?php echo js('external/select2.js'); ?>" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			$(".loader").fadeOut("slow");
@@ -78,6 +79,6 @@ include_once 'load_data.php';
 		?>
 	</section>
 </body>
-<script src="/js/controls/buttons.js" type="text/javascript"></script>
+<script src="<?php echo js('controls/buttons.js'); ?>" type="text/javascript"></script>
 
 </html>

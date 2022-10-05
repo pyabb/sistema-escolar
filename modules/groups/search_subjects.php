@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once $_SESSION['raiz'] . '/modules/conexion.php';
 
@@ -47,6 +48,6 @@ if (isset($_SESSION['temp_subject_career_id'])) {
         }
     }
 } else {
-    header('Location: /');
+    header('Location: ' . app_path());
     exit();
 }

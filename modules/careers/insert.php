@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -6,7 +7,7 @@ include_once '../conexion.php';
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php');
 
 if (empty($_POST['txtcareer'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 
@@ -16,7 +17,7 @@ if ($_POST['txtcareer'] == '') {
 	$_SESSION['msgbox_info'] = 0;
 	$_SESSION['msgbox_error'] = 1;
 	$_SESSION['text_msgbox_error'] = 'Ingrese un ID correcto.';
-	header('Location: /modules/careers');
+	header('Location: ' . app_path('modules/careers'));
 	exit();
 }
 
@@ -28,7 +29,7 @@ if ($result = $conexion->query($sql)) {
 		$_SESSION['msgbox_error'] = 1;
 		$_SESSION['text_msgbox_error'] = 'La carrera que intenta crear ya éxiste.';
 
-		header('Location: /modules/careers');
+		header('Location: ' . app_path('modules/careers'));
 	} else {
 		$_POST['txtcareerdescription'] = mysqli_real_escape_string($conexion, $_POST['txtcareerdescription']);
 		$sql_insert = "INSERT INTO careers(career, name, description) VALUES('" . $_POST['txtcareer'] . "', '" . $_POST['txtcareername'] . "', '" . $_POST['txtcareerdescription'] . "')";
@@ -43,6 +44,6 @@ if ($result = $conexion->query($sql)) {
 			$_SESSION['text_msgbox_error'] = 'Error al guardar.';
 		}
 
-		header('Location: /modules/careers');
+		header('Location: ' . app_path('modules/careers'));
 	}
 }

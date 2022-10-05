@@ -23,7 +23,7 @@ if ($_SESSION['subjects_count'] == 0) {
 	$_SESSION['msgbox_error'] = 1;
 	$_SESSION['text_msgbox_error'] = 'Debe seleccionar minimo una asignatura.';
 
-	print "<script>window.setTimeout(function() { window.location = '/modules/groups' }, 0000);</script>";
+	print "<script>window.setTimeout(function() { window.location = '". app_path('modules/groups') ."' }, 0000);</script>";
 }
 
 //Cargamos datos de estudiantes

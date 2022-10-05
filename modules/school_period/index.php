@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -28,10 +29,10 @@ if (!empty($_POST['btn'])) {
 	<link rel="icon" type="image/png" href="/images/icon.png" />
 	<title>Periodo Escolar | Sistema de Control Escolar</title>
 	<meta name="description" content="Sistema Escolar, gestión de asistencias." />
-	<link rel="stylesheet" href="/css/style.css?v=<?php echo(rand()); ?>" media="screen, projection" type="text/css" />
-	<script src="/js/external/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/external/prefixfree.min.js" type="text/javascript"></script>
-	<script src="/js/controls/unsetnotif.js"  type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo css('style.css'); ?>?v=<?php echo(rand()); ?>" media="screen, projection" type="text/css" />
+	<script src="<?php echo js('external/jquery.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo js('external/prefixfree.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo js('controls/unsetnotif.js'); ?>"  type="text/javascript"></script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			$(".loader").fadeOut("slow");
@@ -61,6 +62,6 @@ if (!empty($_POST['btn'])) {
 		?>
 	</section>
 </body>
-<script src="/js/controls/buttons.js" type="text/javascript"></script>
+<script src="<?php echo js('controls/buttons.js'); ?>" type="text/javascript"></script>
 
 </html>

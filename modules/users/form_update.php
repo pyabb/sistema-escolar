@@ -65,7 +65,7 @@ echo '
 		<form name="form-update-users" action="update.php" enctype="multipart/form-data" method="POST">
 			<div class="wrap">
 				<div class="section-user-image">
-					<img src="' . '/images/users/' . $_SESSION['user_image'] . '" />
+					<img src="' . images('users') . '/' . $_SESSION['user_image'] . '" />
 					<a href="#" class="file"><span class="icon">add_a_photo</span></a>
 					<input id="fileuploadimage" style="display: none;" type="file" name="fileuploadimage" accept=".jpg, .jpeg, .png" />
 				</div>

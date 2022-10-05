@@ -80,4 +80,4 @@ $id_generate = 'stdt-' . unique_id(5);
     include_once "../sections/options-disabled.php";
     ?>
 </div>
-<script src="/js/modules/students.js" type="text/javascript"></script>
+<script src="<?php echo js('modules/students.js'); ?>" type="text/javascript"></script>

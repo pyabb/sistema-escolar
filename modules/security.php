@@ -2,6 +2,6 @@
 session_start();
 
 if ($_SESSION['authenticate'] != 'go-' . $_SESSION['user']) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }

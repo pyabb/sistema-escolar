@@ -44,7 +44,7 @@ if (strpos($url_actual, 'modules')) {
 <div class="nav-home">
     <span class="name_system">Control de Asistencias</span>
     <div class="user">
-        <img class="image_user" src="/images/users/<?php echo $_SESSION['image']; ?>" />
+        <img class="image_user" src="<?php echo images('users') . '/' . $_SESSION['image']; ?>" />
         <span class="name_user">
             <?php print $_SESSION['name'] . ' ' . $_SESSION['surnames']; ?>
         </span>
@@ -52,8 +52,8 @@ if (strpos($url_actual, 'modules')) {
             <a class="icon" href="#">expand_more</a>
             <ul>
                 <li>
-                    <a style="border-bottom: 3px solid #6272a4;" href="/user"><span class="icon">settings</span>Configuración</a>
-                    <a href="/modules/logout"><span class="icon">logout</span>Cerrar Sesión</a>
+                    <a style="border-bottom: 3px solid #6272a4;" href="<?php echo app_path('user'); ?>"><span class="icon">settings</span>Configuración</a>
+                    <a href="<?php echo app_path('modules/logout'); ?>"><span class="icon">logout</span>Cerrar Sesión</a>
                 </li>
             </ul>
         </span>
@@ -61,22 +61,22 @@ if (strpos($url_actual, 'modules')) {
     <ul>
         <li><a class="<?php if ($output[1] == 'home') {
                             echo 'active';
-                        } ?>" href="/home"><span class="icon">dashboard</span>Dashboard</a></li>
+                        } ?>" href="<?php echo app_path('home');?>"><span class="icon">dashboard</span>Dashboard</a></li>
         <li><a class="<?php if ($output[1] == 'teachers') {
                             echo 'active';
-                        } ?>" href="/modules/teachers"><span class="icon">connect_without_contact</span>Docentes</a></li>
+                        } ?>" href="<?php echo app_path('modules/teachers');?>"><span class="icon">connect_without_contact</span>Docentes</a></li>
         <li><a class="<?php if ($output[1] == 'students') {
                             echo 'active';
-                        } ?>" href="/modules/students"><span class="icon">recent_actors</span>Alumnos</a></li>
+                        } ?>" href="/<?php echo app_path('odules/students');?>"><span class="icon">recent_actors</span>Alumnos</a></li>
         <li><a class="<?php if ($output[1] == 'careers') {
                             echo 'active';
-                        } ?>" href="/modules/careers"><span class="icon">school</span>Carreras</a></li>
+                        } ?>" href="<?php echo app_path('modules/careers');?>"><span class="icon">school</span>Carreras</a></li>
         <li><a class="<?php if ($output[1] == 'subjects') {
                             echo 'active';
-                        } ?>" href="/modules/subjects"><span class="icon">library_books</span>Asignaturas</a></li>
+                        } ?>" href="<?php echo app_path('modules/subjects');?>"><span class="icon">library_books</span>Asignaturas</a></li>
         <li><a class="<?php if ($output[1] == 'groups') {
                             echo 'active';
-                        } ?>" href="/modules/groups"><span class="icon">groups</span>Grupos</a></li>
+                        } ?>" href="<?php echo app_path('modules/groups');?>"><span class="icon">groups</span>Grupos</a></li>
     </ul>
 </div>
 <div class="menu-mobile">
@@ -87,32 +87,32 @@ if (strpos($url_actual, 'modules')) {
                 <li>
                     <a class="<?php if ($output[1] == 'home') {
                                     echo 'active';
-                                } ?>" href="/home" title="Dashboard"><span class="icon">dashboard</span></a>
+                                } ?>" href="<?php echo app_path('home');?>" title="Dashboard"><span class="icon">dashboard</span></a>
                 </li>
                 <li>
                     <a class="<?php if ($output[1] == 'teachers') {
                                     echo 'active';
-                                } ?>" href="/modules/teachers" title="Docentes"><span class="icon">connect_without_contact</span></a>
+                                } ?>" href="<?php echo app_path('modules/teachers');?>" title="Docentes"><span class="icon">connect_without_contact</span></a>
                 </li>
                 <li>
                     <a class="<?php if ($output[1] == 'students') {
                                     echo 'active';
-                                } ?>" href="/modules/students" title="Alumnos"><span class="icon">recent_actors</span></a>
+                                } ?>" href="<?php echo app_path('modules/students');?>" title="Alumnos"><span class="icon">recent_actors</span></a>
                 </li>
                 <li>
                     <a class="<?php if ($output[1] == 'careers') {
                                     echo 'active';
-                                } ?>" href="/modules/careers" title="Carreras"><span class="icon">school</span></a>
+                                } ?>" href="<?php echo app_path('modules/careers');?>" title="Carreras"><span class="icon">school</span></a>
                 </li>
                 <li>
                     <a class="<?php if ($output[1] == 'subjects') {
                                     echo 'active';
-                                } ?>" href="/modules/subjects" title="Asignaturas"><span class="icon">library_books</span></a>
+                                } ?>" href="<?php echo app_path('modules/subjects');?>" title="Asignaturas"><span class="icon">library_books</span></a>
                 </li>
                 <li>
                     <a class="<?php if ($output[1] == 'groups') {
                                     echo 'active';
-                                } ?>" href="/modules/groups" title="Grupos"><span class="icon">groups</span></a>
+                                } ?>" href="<?php echo app_path('modules/groups');?>" title="Grupos"><span class="icon">groups</span></a>
                 </li>
             </ul>
         </nav>
@@ -121,20 +121,20 @@ if (strpos($url_actual, 'modules')) {
 </div>
 <div class="user-mobile">
     <header>
-        <img class="activator-user" id="activator-user" src="/images/users/<?php echo $_SESSION['image']; ?>">
+        <img class="activator-user" id="activator-user" src="<?php echo images('users')?>/<?php echo $_SESSION['image']; ?>">
         <nav>
             <ul>
                 <li class="first">
                     <a class="<?php if ($output[1] == 'user') {
                                     echo 'active';
-                                } ?>" href="/user" title="Configuración"><span class="icon">settings</span></a>
+                                } ?>" href="<?php echo app_path('user');?>" title="Configuración"><span class="icon">settings</span></a>
                 </li>
                 <li>
-                    <a href="/modules/logout" title="Cerrar Sesión"><span class="icon">logout</span></a>
+                    <a href="<?php echo app_path('modules/logout');?>" title="Cerrar Sesión"><span class="icon">logout</span></a>
                 </li>
             </ul>
         </nav>
     </header>
 </div>
-<script src="/js/external/gsap.min.js"></script>
-<script src="/js/controls/menumobile.js"></script>
+<script src="<?php echo js('external/gsap.min.js'); ?>"></script>
+<script src="<?php echo js('controls/menumobile.js'); ?>"></script>

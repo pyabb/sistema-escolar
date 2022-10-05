@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';

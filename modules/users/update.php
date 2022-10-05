@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';
@@ -20,7 +21,7 @@ function UpdateUserDB($conex, $user, $email, $permissions)
 	} else {
 		Error('Error al actualizar.');
 	}
-	header('Location: /modules/users');
+	header('Location: ' . app_path('modules/users'));
 	exit();
 }
 
@@ -30,13 +31,13 @@ if (!empty($_SESSION['user_id']) && !empty($_POST['txtusertype'] == 'admin' || $
 	if ($result = $conexion->query($sql)) {
 		if ($row = mysqli_fetch_array($result)) {
 			Error('Este correo electrónico ya está en uso.');
-			header('Location: /modules/users');
+			header('Location: ' . app_path('modules/users'));
 			exit();
 		} else {
 			UpdateUserDB($conexion, trim($_SESSION['user_id']), trim($_POST['txtemailupdate']), trim($_POST['txtusertype']));
 		}
 	}
 } else {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }

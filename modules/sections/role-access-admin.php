@@ -1,5 +1,5 @@
 <?php
 if ($_SESSION['permissions'] != 'admin') {
-    header('Location: /');
+    header('Location: ' . app_path());
     exit();
 }

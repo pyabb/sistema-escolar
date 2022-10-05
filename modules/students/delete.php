@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';
@@ -6,7 +7,7 @@ include_once '../notif_info_msgbox.php';
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php');
 
 if (empty($_POST['txtuserid'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 
@@ -23,5 +24,5 @@ if (mysqli_query($conexion, $sql_delete)) {
 } else {
 	Error('Error al eliminar.');
 }
-header('Location: /modules/students');
+header('Location: ' . app_path('modules/students'));
 exit();

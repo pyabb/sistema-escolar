@@ -1,6 +1,6 @@
 <?php
 if ($_SESSION['permissions'] == 'admin' || $_SESSION['permissions'] == 'editor') {
 } else {
-    header('Location: /');
+    header('Location: ' . app_path());
     exit();
 }

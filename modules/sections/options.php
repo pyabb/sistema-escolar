@@ -13,7 +13,7 @@ include_once 'security.php';
             <button class="btn btn-disabled icon" name="btn" value="form_printer" type="submit" disabled>print</button>
         </form>
         <button id="btnSearchMobile" class="btn btn-search-mobile icon">search</button>
-        <form action="/">
+        <form action="<?php echo app_path(); ?>">
             <button id="btnExitOptions" class="btn btn-exit icon" type="submit">exit_to_app</button>
         </form>
     </div>
@@ -26,4 +26,4 @@ include_once 'security.php';
         </form>
     </div>
 </div>
-<script src="/js/controls/options.js"></script>
+<script src="<?php echo js('controls/options.js'); ?>"></script>

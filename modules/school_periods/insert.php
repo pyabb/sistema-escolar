@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';
@@ -8,12 +9,12 @@ require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin.php');
 $_POST['txtspid'] = trim($_POST['txtspid']);
 
 if (empty($_POST['txtspid'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 if ($_POST['txtspid'] == '') {
 	Error('Ingrese un ID correcto.');
-	header('Location: /modules/school_periods');
+	header('Location: ' . app_path('modules/school_periods'));
 	exit();
 }
 
@@ -24,7 +25,7 @@ $days = $diff->invert;
 
 if ($days > 0) {
 	Error('La fecha en que termina el periodo escolar, debe ser mayor que la fecha de inicio.');
-	header('Location: /modules/school_periods');
+	header('Location: ' . app_path('modules/school_periods'));
 	exit();
 } else {
 	$sql = "SELECT school_period FROM school_periods WHERE school_period = '" . $_POST['txtspid'] . "'";
@@ -32,7 +33,7 @@ if ($days > 0) {
 	if ($result = $conexion->query($sql)) {
 		if ($row = mysqli_fetch_array($result)) {
 			Error('Este ID ya está en uso. Elige otro.');
-			header('Location: /modules/school_periods');
+			header('Location: ' . app_path('modules/school_periods'));
 			exit();
 		} else {
 			$date = date('Y-m-d H:i:s');
@@ -51,7 +52,7 @@ if ($days > 0) {
 			} else {
 				Error('Error al guardar.');
 			}
-			header('Location: /modules/school_periods');
+			header('Location: ' . app_path('modules/school_periods'));
 			exit();
 		}
 	}

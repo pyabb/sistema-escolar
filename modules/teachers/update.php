@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';
@@ -8,12 +9,12 @@ require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php
 $_POST['txtuserid'] = trim($_POST['txtuserid']);
 
 if (empty($_POST['txtuserid'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 if ($_POST['txtuserid'] == '') {
 	Error('Ingrese un ID correcto.');
-	header('Location: /modules/teachers');
+	header('Location: ' . app_path('modules/teachers'));
 	exit();
 }
 
@@ -38,11 +39,11 @@ if ($result = $conexion->query($sql)) {
 			Error('Error al actualizar.');
 		}
 		
-		header('Location: /modules/teachers');
+		header('Location: ' . app_path('modules/teachers'));
 		exit();
 	} else {
 		Error('Este ID de docente no existe.');
-		header('Location: /modules/teachers');
+		header('Location: ' . app_path('modules/teachers'));
 		exit();
 	}
 }

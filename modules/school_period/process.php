@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -9,5 +10,5 @@ if (isset($_POST['btn-school-period']) && $_POST['btn-school-period'] = 'true') 
 		$_SESSION['school_period'] = $_POST['check-school-period' . $i];
 		setcookie('school_period', $_POST['check-school-period' . $i], time() + 365 * 24 * 60 * 60, "/");
 	}
-	header('Location: /');
+	header('Location: ' . app_path());
 }

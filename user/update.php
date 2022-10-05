@@ -1,11 +1,12 @@
 <?php
+include_once __DIR__ . '/../bootstrap/index.php';
 include_once '../modules/security.php';
 include_once '../modules/conexion.php';
 
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php');
 
 if (empty($_POST['txtuseridUpdate'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 } else {
 	$pass = mysqli_real_escape_string($conexion, $_POST['txtuserpassOldUpdate']);
@@ -21,7 +22,7 @@ if (empty($_POST['txtuseridUpdate'])) {
 					$_SESSION['msgbox_info'] = 0;
 					$_SESSION['msgbox_error'] = 1;
 					$_SESSION['text_msgbox_error'] = 'Este correo electrónico ya está en uso.';
-					header('Location: /user');
+					header('Location: ' . app_path('user'));
 					exit();
 				} else {
 					if ($_POST['txtuserpassNewUpdate'] == $_POST['txtuserpassConfirmUpdate'] and $_POST['txtuserpassNewUpdate'] != "" and $_POST['txtuserpassConfirmUpdate'] != "") {
@@ -39,7 +40,7 @@ if (empty($_POST['txtuseridUpdate'])) {
 						$_SESSION['msgbox_error'] = 1;
 						$_SESSION['text_msgbox_error'] = 'Error al actualizar.';
 					}
-					header('Location: /user');
+					header('Location: ' . app_path('user'));
 					exit();
 				}
 			}
@@ -47,7 +48,7 @@ if (empty($_POST['txtuseridUpdate'])) {
 			$_SESSION['msgbox_info'] = 0;
 			$_SESSION['msgbox_error'] = 1;
 			$_SESSION['text_msgbox_error'] = 'Contraseña incorrecta.';
-			header('Location: /user');
+			header('Location: ' . app_path('user'));
 			exit();
 		}
 	}

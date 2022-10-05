@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -6,7 +7,7 @@ include_once '../conexion.php';
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php');
 
 if (empty($_SESSION['id_group'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 
@@ -35,7 +36,7 @@ if ($_SESSION['students_count'] == 0) {
 	$_SESSION['msgbox_error'] = 1;
 	$_SESSION['text_msgbox_error'] = 'Debe seleccionar minimo un estudiante.';
 
-	header('Location: /modules/groups');
+	header('Location: ' . app_path('modules/groups'));
 	exit();
 } else {
 	$sql = "SELECT * FROM groups WHERE id_group = '" . $_SESSION['id_group'] . "' AND school_period = '" . $_SESSION['school_period_group'] . "'";
@@ -46,7 +47,7 @@ if ($_SESSION['students_count'] == 0) {
 			$_SESSION['msgbox_error'] = 1;
 			$_SESSION['text_msgbox_error'] = 'El grupo que intenta crear ya éxiste.';
 
-			header('Location: /modules/groups');
+			header('Location: ' . app_path('modules/groups'));
 		} else {
 			$sql_insert = "INSERT INTO groups(id_group, school_period, name, semester, subjects) VALUES('" . $_SESSION['id_group'] . "', '" . $_SESSION['school_period_group'] . "', '" . $_SESSION['name_group'] . "', '" . intval($_SESSION['semester_group']) . "', '" . $_SESSION['subjects'] . "')";
 
@@ -72,7 +73,7 @@ if ($_SESSION['students_count'] == 0) {
 				$_SESSION['text_msgbox_error'] = 'Error al guardar datos en tabla.';
 			}
 
-			header('Location: /modules/groups');
+			header('Location: ' . app_path('modules/groups'));
 		}
 	}
 }

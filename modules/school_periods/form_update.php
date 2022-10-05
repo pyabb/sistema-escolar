@@ -78,4 +78,4 @@ if ($result = $conexion->query($sql)) {
 <div class="content-aside">
 	<?php include_once "../sections/options-disabled.php"; ?>
 </div>
-<script src="/js/modules/schoolperiods.js" type="text/javascript"></script>
+<script src="<?php echo js('modules/schoolperiods.js'); ?>" type="text/javascript"></script>

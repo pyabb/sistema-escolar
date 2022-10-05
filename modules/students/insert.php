@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 include_once '../notif_info_msgbox.php';
@@ -8,12 +9,12 @@ require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php
 $_POST['txtuserid'] = trim($_POST['txtuserid']);
 
 if (empty($_POST['txtuserid'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 if ($_POST['txtuserid'] == '') {
 	Error('Ingrese un ID correcto.');
-	header('Location: /modules/students');
+	header('Location: ' . app_path('modules/students'));
 	exit();
 }
 
@@ -22,7 +23,7 @@ $sql = "SELECT * FROM students WHERE user = '" . $_POST['txtuserid'] . "'";
 if ($result = $conexion->query($sql)) {
 	if ($row = mysqli_fetch_array($result)) {
 		Error('Este ID ya está en uso. Elige otro.');
-		header('Location: /modules/students');
+		header('Location: ' . app_path('modules/students'));
 		exit();
 	} else {
 		$date = date('Y-m-d H:i:s');
@@ -44,7 +45,7 @@ if ($result = $conexion->query($sql)) {
 		} else {
 			Error('Error al guardar.');
 		}
-		header('Location: /modules/students');
+		header('Location: ' . app_path('modules/students'));
 		exit();
 	}
 }

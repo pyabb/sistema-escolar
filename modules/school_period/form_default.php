@@ -74,7 +74,7 @@ if (isset($_SESSION['school_period']) != '') {
                     ';
 
 				if ($i == 0) {
-					echo '<img src="/images/404.svg" class="data-not-found" alt="404">';
+                    echo "<img src=" . images('404.svg') . " class='data-not-found' alt='404'>";
 				}
 				?>
 			</div>

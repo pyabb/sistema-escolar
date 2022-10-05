@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../../bootstrap/index.php';
 include_once '../security.php';
 include_once '../conexion.php';
 
@@ -6,7 +7,7 @@ include_once '../conexion.php';
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php');
 
 if (empty($_POST['txtsubject'])) {
-	header('Location: /');
+	header('Location: ' . app_path());
 	exit();
 }
 
@@ -18,7 +19,7 @@ if ($result = $conexion->query($sql)) {
 		$_SESSION['msgbox_error'] = 1;
 		$_SESSION['text_msgbox_error'] = 'La asignatura que intenta crear ya éxiste.';
 
-		header('Location: /modules/subjects');
+		header('Location: ' . app_path('modules/subjects'));
 	} else {
 		$_POST['txtsubjectdescription'] = mysqli_real_escape_string($conexion, $_POST['txtsubjectdescription']);
 		$sql_insert = "INSERT INTO subjects(subject, career, name, semester, description, user_teachers) VALUES('" . $_POST['txtsubject'] . "', '" . $_SESSION['temp_subject_career_id'] . "', '" . $_POST['txtsubjectname'] . "', '" . $_POST['txtsubjectsemester'] . "', '" . $_POST['txtsubjectdescription'] . "', '" . $_SESSION['temp_select_teachers'] . "')";
@@ -43,6 +44,6 @@ if ($result = $conexion->query($sql)) {
 			$_SESSION['text_msgbox_error'] = 'Error al guardar.';
 		}
 
-		header('Location: /modules/subjects');
+		header('Location: ' . app_path('modules/subjects'));
 	}
 }

@@ -11,14 +11,14 @@ include_once 'load_data.php';
 			<div class="options">
 				<a href="#" class="change-btn"><span class="icon">sync</span></a>
 				<a href="#" class="crop-btn"><span class="icon">crop</span></a>
-				<a href="/user" class="cancel-btn"><span class="icon">close</span></a>
+				<a href="<?php echo app_path('user')?>" class="cancel-btn"><span class="icon">close</span></a>
 			</div>
 		</div>
 		<form name="form-update-users" action="update.php" enctype="multipart/form-data" method="POST" onsubmit="return confirmPass()">
 			<div class="wrap">
 				<div class="first">
 					<div class="section-user-image">
-						<img src="<?php echo '/images/users/' . $_SESSION['user_image']; ?>" />
+						<img src="<?php echo images('users') . '/' . $_SESSION['user_image']; ?>" />
 						<?php
 						$date_time_start = date_create($_SESSION['image_updated_at']);
 						$date_time_end = date_create(date('Y-m-d'));

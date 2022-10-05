@@ -54,10 +54,9 @@ require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin-editor.php
 	</table>
 	<?php
 	if ($_SESSION['total_careers'] == 0) {
-		echo '
-				<img src="/images/404.svg" class="data-not-found" alt="404">
-		';
-	}
+        echo "<img src=" . images('404.svg') . " class='data-not-found' alt='404'>";
+
+    }
 	if ($_SESSION['total_careers'] != 0) {
 		echo '
 				<div class="pages">

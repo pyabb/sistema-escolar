@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../bootstrap/index.php';
 session_start();
 session_destroy();
 
@@ -12,5 +13,5 @@ setcookie('authenticate', '', time() - 42000, '/');
 setcookie('section-admin', '', time() - 42000, '/');
 setcookie('remember', '', time() - 42000, '/');
 
-header('Location: /');
+header('Location: ' . app_path());
 exit();
