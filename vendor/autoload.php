@@ -1,17 +1,18 @@
 <?php
 
-spl_autoload_register(function($classname)
-{
+$class_map = include_once 'rqb/autoload_classmap.php';
+
+
+spl_autoload_register(function($classname) use ($class_map) {
     $namespace = lcfirst(str_replace("\\", "/", $classname));
     $path = __DIR__ . '/../' . $namespace . '.php';
     //$path = __DIR__ . '/../app/' . $namespace . '.php';
     if(file_exists($path))
     {
-        require_once($path);
+        include_once($path);
     }
     else
     {
-        $class_map = require_once 'rqb/autoload_classmap.php';
-        require_once $class_map[$classname];
+        include_once $class_map[$classname];
     }
 });
