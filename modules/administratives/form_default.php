@@ -2,7 +2,24 @@
 require_once($_SESSION['raiz'] . '/modules/sections/role-access-admin.php');
 ?>
 <div class="form-gridview">
-	<table class="default">
+
+    <!-- download files -->
+    <div class="buttons__download__wrapper" data-role="administrative">
+        <div class="buttons__download__title">
+            Downloads
+        </div>
+        <div class="buttons__download__files">
+            <button class="button__download__pdf" id="download-pdf-file">
+                <i class="bi bi-filetype-pdf"></i>
+            </button>
+            <button class="button__download__csv" id="download-csv-file">
+                <i class="bi bi-filetype-csv"></i>
+            </button>
+        </div>
+    </div>
+    <!-- end download files -->
+
+    <table class="default">
 		<?php
 		if ($_SESSION['total_users'] != 0) {
 			echo '
