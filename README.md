@@ -22,7 +22,7 @@ If you need a business application with native PHP then consider using PHP compo
 * Symfony Yaml
 * ORM (Eloquent or Doctrine)
 
-You can see all changelogs [here](changelogs/en.md)
+You can see all changelogs [here](docs/changelogs/en.md)
 
 
 ## 2. Spanish | Español
@@ -40,7 +40,7 @@ Si necesita una aplicación comercial con PHP nativo, considere usar PHP compose
 * Symfony Yaml
 * ORM (Eloquent or Doctrine)
 
-Puede ver todos los registros de cambios [aquí](changelogs/es.md)
+Puede ver todos los registros de cambios [aquí](docs/changelogs/es.md)
 
 ## 3. User Access (original database)
 
