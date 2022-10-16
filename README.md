@@ -1,7 +1,13 @@
 ## Sistema Escolar
 Control de Asistencias
 
-## English | Inglés
+1. English details
+2. Spanish details
+3. Xampp installation
+4. User Access (original database)
+5. Owner
+
+## 1. English | Inglés
 I will support this project a few hours a month.
 The core of the project will be the native PHP code, adding basic and simple scripts to complement some actions like:
 * Generate a custom autoload to classes and namespaces.
@@ -19,7 +25,7 @@ If you need a business application with native PHP then consider using PHP compo
 You can see all changelogs [here](changelogs/en.md)
 
 
-## Spanish | Español
+## 2. Spanish | Español
 Apoyaré este proyecto unas horas al mes.
 El núcleo del proyecto será el código PHP nativo, agregando scripts básicos y simples para complementar algunas acciones como:
 * Generar una carga personalizada para clases y nombres de espacios(namespace).
@@ -36,14 +42,14 @@ Si necesita una aplicación comercial con PHP nativo, considere usar PHP compose
 
 Puede ver todos los registros de cambios [aquí](changelogs/es.md)
 
-## User Access (original database)
+## 3. User Access (original database)
 
 | User   | Pass   |
 |--------|--------|
 | admin  | root   |
 | editor | editor |
 
-## Owner
+## 4. Owner
 
 Support this project with a `like` or `subscription` [here](https://www.youtube.com/watch?v=8h14L21eJsg)
 
@@ -52,7 +58,7 @@ Support this project with a `like` or `subscription` [here](https://www.youtube.
 | Original version | v1.0.0  | http://mysoftup.com  |
 | New version      | vx.0.0  |                      |
 
-## Installation for XAMPP
+## 5. Installation for XAMPP
 1. Download .zip file or clone this repository. If you download zip file then rename the directory, for this example the directory name will be `sistema-escolar`.
 2. Migrate database from `sistema-cursos/db/db_school.sql` in your personal database like phpmyadmin.
 3. Edit `.env` file with your credentials.
