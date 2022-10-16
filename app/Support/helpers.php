@@ -81,3 +81,13 @@ if(!function_exists('app_path'))
         return env('APP_PATH') . $separator . "$path";
     }
 }
+
+if(!function_exists('reportFields'))
+{
+    function reportFields(string $path, string $docType = null)
+    {
+        $data = ['report', $path, env('REPORT_FIELD_LANGUAGE')];
+        $path = implode('.', $data);
+        return config($path);
+    }
+}
