@@ -41,6 +41,7 @@ include_once 'load_data.php';
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 	<meta name="robots" content="noindex">
 	<meta name="google" value="notranslate">
+    <meta name="website" content="<?php echo app_path(); ?>">
 	<link rel="icon" type="image/png" href="/images/icon.png" />
 	<title>Administrativos | Sistema Escolar</title>
 	<meta name="description" content="Sistema Escolar, gestión de asistencias." />
@@ -80,5 +81,5 @@ include_once 'load_data.php';
 	</section>
 </body>
 <script src="<?php echo js('controls/buttons.js'); ?>" type="text/javascript"></script>
-
+<script src="<?php echo js('modules/reports.js'); ?>" type="text/javascript"></script>
 </html>
